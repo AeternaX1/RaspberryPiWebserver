@@ -1,0 +1,118 @@
+.container-fluid {
+	height: max-height;
+	width: max-width;
+	background-color: #000000;
+}
+
+.jumbotron {
+	font-family: 'Courier New';
+}
+
+
+.col-lg-4, .col-lg-6, .col-lg-12 {
+	color: #ffffff;
+	font-family: 'Courier New';
+	text-align: center;
+	margin-top: 15%;
+	font-size: 18px;
+}
+
+/*NAVIGATION*/
+/*Styling of entire navbar*/
+nav {
+	height: max-height;
+	width: 100%;
+	margin-bottom: 5%;
+	font-size: 18px;
+	text-align: center;
+	font-family: 'Courier New';
+}
+
+/*Styling of each individual link*/
+.link-item {
+	background-color: #000000;
+	color: #ffffff;
+	border-color: #000000;
+	text-decoration: none;
+	padding: 1%;
+	margin-top: 5%;
+	width: 100%;
+	text-align: center;
+}
+
+/*What happens to nav bar items when you hover over*/
+.link-item:hover {
+	background-color: #07c700;
+	color: black;
+	transition: 0.75s;
+}
+
+
+/*FORMS*/
+#login, #register {
+	height: max-height;
+	width: 100%;
+	padding: 5%;
+	border-radius: 15px;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+label {
+	width: 50%;
+	text-align: left;
+}
+
+#username, #email, #password {
+	height: 10%;
+	width: 50%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: none;
+	border-radius: 10px;
+	font-family: tahoma;
+  	font-size: 18px;
+  	display: inline-block;
+  	background-color: #ffffff;
+	color: #000000;
+	margin-bottom: 30px;
+}
+
+#submit {
+	height: max-height;
+	width: 50%;
+	margin-top: 10%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+  	font-size: 24px;
+	border: none;
+	border-radius: 25px;
+	background-color: #bd0d00;
+	color: #ffffff;
+}
+
+/*What happens to submit button when you hover*/
+#submit:hover {
+	background-color: #07c700;
+	color: #000000;
+	transition: 0.5s;
+}
+
+footer {
+	/*Sticky footer code*/
+	/*
+	width: 100%;
+	bottom:0;
+	position: sticky;
+	overflow: hidden;	
+	z-index: 500;
+	*/
+
+	font-family: 'Courier New';
+	text-align: center;
+	color: #ffffff;
+	margin-top: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-color: #000000;
+}
