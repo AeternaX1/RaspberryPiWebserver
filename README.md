@@ -11,6 +11,9 @@ ON THE RASPBERRY PI
 *************************************************************************************************************************
 
 
+
+
+
 ### Introduction
 This topic demonstrates how the internals of the Raspberry Pi work, and the intended project will make use of the GPIO pins available on the device. 
 This project will also demonstrate the power of the RPi by creating robust and dynamic website that will be hosted on a webserver installed on the RPi, 
@@ -26,6 +29,9 @@ Create a dynamic website that is hosted on the Apache2 RPi webserver, allowing t
 as well as view the output of Linux commands stored within Python scripts running on a webpage
 Only allow users to interact with the RPi if they’re registered via secure login/registration.
 Account details will be stored in MariaDB
+
+
+
 
 
 ### Install Raspberry Pi Apache2 webserver
