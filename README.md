@@ -66,6 +66,9 @@ Changes can be made to the default splash page:
 The Apache2 webserver will serve all files within “var/www/html”.
 
 
+
+
+
 ### PHP7 Installation
 PHP7 will need to be installed to allow for dynamic webpages.
 •	sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-gd php7.4-zip -y
@@ -79,11 +82,17 @@ Run this:
 Exit nano and navigate to 192.168.0.18/RaspberryPiWebserver/index.php. “index.php” will be empty, but the webserver will be hosting it. 
 
 
+
+
+
 ### Configure Apache Virtual Host
 When configuring webservers, its good practice to configure a virtual host, allowing for more than one website on a webserver.
 This is recommended if more than one website will be hosted, or if the website will public-facing. 
 Once installed, activate the virtual host, this allows for a  Domain Name Server (DNS) to be pointed to the RPi’s public IP address and 
 serve the files for the requested domain name. Port forwarding will need to be configured in order to enable this. 
+
+
+
 
 
 ### MariaDB
@@ -103,6 +112,9 @@ Access MySQL:
 
 Login with the new password. 
 MariaDB allows for the creation of users that can have the rights to manage the database assigned to them. 
+
+
+
 
 
 ### Creating a MariaDB Database and User
@@ -138,9 +150,8 @@ Install a connector to use MariaDB with PHP
 
 
 
-***********
-PHPMyAdmin
-***********
+
+### PHPMyAdmin
 PHPMyAdmin utilises a GUI format for database administration.
 - sudo apt install phpMyAdmin
 
@@ -150,9 +161,8 @@ A screen will display asking the type of webserver PHPMyAdmin will operate from.
 
 
 
-********************************
-Connect PHPMyAdmin with MariaDB
-******************************** 
+
+### Connect PHPMyAdmin with MariaDB
 More details are needed for PHPMyAdmin. Select “<Yes>” at the next prompt.
 
 Set PHPMyAdmin root password 
@@ -173,12 +183,11 @@ Run the following
 	- GRANT ALL PRIVILEGES ON *.* TO 'patrick'@'localhost' IDENTIFIED BY 'H3LRrXhr' WITH GRANT OPTION;
 Exit MariaDB.
 
-
-
-
-***********************
-Configuring PHPMyAdmin
-***********************
+	
+	
+	
+	
+### Configuring PHPMyAdmin
 Before PHPMyAdmin can be booted, some changes need to be made to the webserver. Edit the “Apache2.conf” file.
 	- sudo nano /etc/apache2/apache2.conf
 
@@ -188,12 +197,11 @@ Add this line to the BOTTOM of this file. This line will include PHPMyAdmin’s 
 Save, exit, and restart the Apache2 service. This will flush the current Apache2 configuration and make it load in the modified file.
 	- sudo service apache2 restart
 
+	
+	
 
 
-
-*********************
-Accessing PHPMyAdmin
-*********************
+### Accessing PHPMyAdmin
 To test PHPMyAdmin, type the following address in a browser.
 	- http://192.168.0.18/phpmyadmin
 	- Replace the IP address if it differs
@@ -204,11 +212,11 @@ DO NOT use the root user as this is disabled by default.
 Create user table
 Login to PHPMyAdmin and create a user table containing the columns “username”, “email” and “password”.
 
+	
 
 
-*******************
-Test Website Structure
-*******************
+
+### Test Website Structure
 This directory structure was created:
 
 root
@@ -281,12 +289,11 @@ css
 style.css
 - Style data for each of the webpages
 
+	
 
 
 
-********************************
-LEDs
-********************************
+### LEDs
 The LEDs are controlled using the PHP function “shell_exec()” to set the output mode of the GPIO pin on the RPi and controlling the on/off function with an HTML button. 
 When “Switch On” is clicked, the value “red_on” is posted to the PHP code, which is checked via “isset()”. The GPIO pin’s output mode is set, followed by changing the write value to “1”, turning the LED on.
 When “Switch Off” is pressed, the write value is set to “0” and the LED is turned off.
@@ -297,18 +304,16 @@ With multiple LEDs, a form passes “all_led_on” to PHP when the “Turn All L
 
 
 
-***********************
-Linux Terminal Commands
-***********************
+
+### Linux Terminal Commands
 To output Linux commands to HTML,  Python scripts store a command inside a variable, and pass it to os.system. 
 That Python file is then executed on the browser via PHP with “exec_file()”. An example of this is outputting the clock speed of the RPi’s processor, the command “vcgencmd measure_clock arm” is stored inside a variable called “cmd”, and that variable is then passed to “os.system”. 
 
+	
 
 
 
-***********************
-Security Considerations
-***********************
+### Security Considerations
 Incorrect information or empty fields cannot be entered into the database. 
 All fields must be populated, if fields are empty, authentication cannot occur. 
 Stripslashes, prepared statements and mysqli_real_escape_string are used to protect against SQL injections.
