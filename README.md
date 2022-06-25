@@ -1,5 +1,4 @@
 # RaspberryPiWebserver
- A complete Raspberry Pi Apache2 webserver configuration with test website
 
 *************************************************************************************************************************
 THIS IS A SIMPLE HOBBY PROJECT. IT IS IN NO WAY INTENDED TO BE USED COMMERCIALLY
