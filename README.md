@@ -1,18 +1,17 @@
 # RaspberryPiWebserver
  A complete Raspberry Pi Apache2 webserver configuration with test website
 
-*
+*************************************************************************************************************************
 THIS IS A SIMPLE HOBBY PROJECT. IT IS IN NO WAY INTENDED TO BE USED COMMERCIALLY
 As such, all passwords used and chosen during setup are included. 
 You are welcome to change these.
 
 PLEASE FOLLOW THE INSTRUCTIONS BELOW. THE WEBSITE CREATED IS INTENDED TO BE USED ON A WEBSERVER, INSALLED AND CONFIGURED
 ON THE RASPBERRY PI
-*
+*************************************************************************************************************************
 
-************
-INTRODUCTION
-************
+
+### Introduction
 This topic demonstrates how the internals of the Raspberry Pi work, and the intended project will make use of the GPIO pins available on the device. 
 This project will also demonstrate the power of the RPi by creating robust and dynamic website that will be hosted on a webserver installed on the RPi, 
 with security as a top priority.
@@ -29,11 +28,7 @@ Only allow users to interact with the RPi if they’re registered via secure log
 Account details will be stored in MariaDB
 
 
-
-
-***************************************
-Install Raspberry Pi Apache2 webserver
-***************************************
+### Install Raspberry Pi Apache2 webserver
 
 Install Apache2:
 •	sudo apt install apache2 -y 
@@ -65,11 +60,7 @@ Changes can be made to the default splash page:
 The Apache2 webserver will serve all files within “var/www/html”.
 
 
-
-
-*****************
-PHP7 Installation
-*****************
+### PHP7 Installation
 PHP7 will need to be installed to allow for dynamic webpages.
 •	sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-gd php7.4-zip -y
 Dynamic webpages can be created under the “var/www/html” directory. This project is contained in the “var/www/html/RaspberryPiWebserver” directory. 
@@ -82,22 +73,14 @@ Run this:
 Exit nano and navigate to 192.168.0.18/RaspberryPiWebserver/index.php. “index.php” will be empty, but the webserver will be hosting it. 
 
 
-
-
-*****************************
-Configure Apache Virtual Host
-*****************************
+### Configure Apache Virtual Host
 When configuring webservers, its good practice to configure a virtual host, allowing for more than one website on a webserver.
 This is recommended if more than one website will be hosted, or if the website will public-facing. 
 Once installed, activate the virtual host, this allows for a  Domain Name Server (DNS) to be pointed to the RPi’s public IP address and 
 serve the files for the requested domain name. Port forwarding will need to be configured in order to enable this. 
 
 
-
-
-********
-MariaDB
-********
+### MariaDB
 Configure MariaDB. 
 	- sudo apt install mariadb-server
 
@@ -116,12 +99,7 @@ Login with the new password.
 MariaDB allows for the creation of users that can have the rights to manage the database assigned to them. 
 
 
-
-
-*************************************
-Creating a MariaDB Database and User
-*************************************
-Create a new database:
+### Creating a MariaDB Database and User
 
 	- CREATE DATABASE users;
 
@@ -147,11 +125,7 @@ Databases can also be managed via PHPMyAdmin, which was the preferred method for
 It may seem redundant installing MariaDB and creating a user, as later on, one will be created via PHPMyAdmin, but to this was still done to avoid confusion.
 
 
-
-
-*******************
-PHPMySQL Connector
-*******************
+### PHPMySQL Connector
 Install a connector to use MariaDB with PHP
 - sudo apt install php-mysql
 
