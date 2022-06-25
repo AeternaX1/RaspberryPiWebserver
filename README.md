@@ -1,16 +1,14 @@
 # RaspberryPiWebserver
  A complete Raspberry Pi Apache2 webserver configuration with test website
 
-*********************************************************************************
+*
 THIS IS A SIMPLE HOBBY PROJECT. IT IS IN NO WAY INTENDED TO BE USED COMMERCIALLY
 As such, all passwords used and chosen during setup are included. 
 You are welcome to change these.
-*********************************************************************************
 
-*************************************************************************************************************************
 PLEASE FOLLOW THE INSTRUCTIONS BELOW. THE WEBSITE CREATED IS INTENDED TO BE USED ON A WEBSERVER, INSALLED AND CONFIGURED
 ON THE RASPBERRY PI
-*************************************************************************************************************************
+*
 
 ************
 INTRODUCTION
