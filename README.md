@@ -1,10 +1,10 @@
 # RaspberryPiWebserver
 
 
-## THIS IS A SIMPLE HOBBY PROJECT. IT IS IN NO WAY INTENDED TO BE USED COMMERCIALLY<br>
-All passwords used and chosen during setup are included.<br>
-You are welcome to change these.<br>
-PLEASE FOLLOW THE INSTRUCTIONS BELOW. THE WEBSITE CREATED IS INTENDED TO BE USED ON A WEBSERVER, INSTALLED AND CONFIGURED ON THE RASPBERRY PI.
+THIS IS A SIMPLE HOBBY PROJECT AND IS IN NO WAY INTENDED TO BE USED COMMERCIALLY.
+All passwords used and chosen during setup are included.
+You are welcome to change these.
+PLEASE FOLLOW THE INSTRUCTIONS BELOW.
 
 
 
