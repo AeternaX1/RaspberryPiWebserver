@@ -36,7 +36,7 @@ Account details will be stored in MariaDB
 ### Install Raspberry Pi Apache2 webserver
 
 Install Apache2:
-•	sudo apt install apache2 -y 
+sudo apt install apache2 -y 
 
 To check if Apache2 has been installed correctly, enter the RPi’s IP address into a browser.
 
