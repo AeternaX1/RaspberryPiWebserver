@@ -182,14 +182,16 @@ This password is what PHPMyAdmin will use to connect to the MariaDB server.
 
 Create new user
 PHPMyAdmin does not allow for root user login by default. Instead, create a new user to access databases/tables. To do this, login to the MariaDB command line.
-sudo mysql -u root -p
+
+	sudo mysql -u root -p
 	
 Log in to the MariaDB “root” user with the password that was set up earlier.
 Create user and permit them to access all databases on MariaDB 
 
-Run the following
+Run the following:
 	
-GRANT ALL PRIVILEGES ON *.* TO 'patrick'@'localhost' IDENTIFIED BY 'H3LRrXhr' WITH GRANT OPTION;
+	GRANT ALL PRIVILEGES ON *.* TO 'patrick'@'localhost' IDENTIFIED BY 'H3LRrXhr' WITH GRANT OPTION;
+
 Exit MariaDB.
 
 	
