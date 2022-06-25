@@ -48,19 +48,19 @@ Where appropriate, change this value to your RPis IP address
 This should display a Debian splash page to indicate that the webserver is up and running.
 If IP address is unknown, run this:
 
-	- hostname -I
+	hostname -I
 
 Allow for modifications
 Normally, to make changes to the “/var/www/html” directory, “sudo su” would need to be entered to execute commands as the root user. 
 To avoid this, permissions can be configured. Add the default “pi” user to the “www-data” group (the default group for Apache2). 
 Then, give ownership of all the files and folders in the “/var/www/html” directory to the “www-data” group. 
 
-	- sudo usermod -a -G www-data pi
-	- sudo chown -R -f www-data:www-data /var/www/html
+	sudo usermod -a -G www-data pi
+	sudo chown -R -f www-data:www-data /var/www/html
 
 Changes can be made to the default splash page: 
 
-	- nano /var/www/html/index.html
+	nano /var/www/html/index.html
 
 The Apache2 webserver will serve all files within “var/www/html”.
 
@@ -70,13 +70,16 @@ The Apache2 webserver will serve all files within “var/www/html”.
 
 ### PHP7 Installation
 PHP7 will need to be installed to allow for dynamic webpages.
-•	sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-gd php7.4-zip -y
+
+	sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-gd php7.4-zip -y
+
 Dynamic webpages can be created under the “var/www/html” directory. This project is contained in the “var/www/html/RaspberryPiWebserver” directory. 
 When loading the project, enter the RPi’s IP address followed by the project name, “192.168.0.18/RaspberryPiWebserver”. 
 If an index.php file is included, the browser will load that by default. 
 
 Run this:
-	- sudo nano var/www/html/RaspberryPiWebserver/index.php
+
+	sudo nano var/www/html/RaspberryPiWebserver/index.php
 
 Exit nano and navigate to 192.168.0.18/RaspberryPiWebserver/index.php. “index.php” will be empty, but the webserver will be hosting it. 
 
@@ -96,10 +99,12 @@ serve the files for the requested domain name. Port forwarding will need to be c
 
 ### MariaDB
 Configure MariaDB. 
-	- sudo apt install mariadb-server
+
+	sudo apt install mariadb-server
 
 Secure the installation:
-	- sudo mysql_secure_installation
+
+	sudo mysql_secure_installation
 
 MariaDB will prompt the user to set up a root password. 
 Its recommended to answer “Y” to all user prompts, which will remove features allowing someone to gain easier access to MariaDB . 
@@ -107,7 +112,8 @@ Those were the actions taken here.
 For extra security, store the password in a secure password locker such as LastPass. 
 
 Access MySQL:
-	- sudo mysql -u root -p
+
+	sudo mysql -u root -p
 
 Login with the new password. 
 MariaDB allows for the creation of users that can have the rights to manage the database assigned to them. 
@@ -118,25 +124,25 @@ MariaDB allows for the creation of users that can have the rights to manage the 
 
 ### Creating a MariaDB Database and User
 
-	- CREATE DATABASE users;
+	CREATE DATABASE users;
 
 
 Assign user to MariaDB database:
 
-	A MariaDB user will be assigned to the database called “patrick” and will have the password “patrick”.
-	Feel free to change this, however this user will be used in the conect of this document
+A MariaDB user will be assigned to the database called “patrick” and will have the password “patrick”.
+Feel free to change this, however this user will be used in the conect of this document
 
-	- CREATE USER 'patrick'@'localhost' IDENTIFIED BY 'patrick';
+	CREATE USER 'patrick'@'localhost' IDENTIFIED BY 'patrick';
 
 
 Grant all permissions to interact with the “users” database. 
 
-	- GRANT ALL PRIVILEGES ON users.* TO patrick@'localhost';
+	GRANT ALL PRIVILEGES ON users.* TO patrick@'localhost';
 
 
 Flush the privilege table. If this isn’t done, database access won’t be possible. 
 
-	- FLUSH PRIVILEGES
+	FLUSH PRIVILEGES
 
 Databases can also be managed via PHPMyAdmin, which was the preferred method for this mini-project. 
 It may seem redundant installing MariaDB and creating a user, as later on, one will be created via PHPMyAdmin, but to this was still done to avoid confusion.
@@ -144,7 +150,8 @@ It may seem redundant installing MariaDB and creating a user, as later on, one w
 
 ### PHPMySQL Connector
 Install a connector to use MariaDB with PHP
-- sudo apt install php-mysql
+
+	sudo apt install php-mysql
 
 
 
@@ -152,7 +159,8 @@ Install a connector to use MariaDB with PHP
 
 ### PHPMyAdmin
 PHPMyAdmin utilises a GUI format for database administration.
-- sudo apt install phpMyAdmin
+
+	sudo apt install phpMyAdmin
 
 User input will be required.  
 A screen will display asking the type of webserver PHPMyAdmin will operate from. Select “apache2”. 
@@ -172,14 +180,16 @@ Password = SZhqMLtn
 This password is what PHPMyAdmin will use to connect to the MariaDB server. 
 
 Create new user
-PHPMyAdmin does not allow for root user login by default. Instead, create a new user to access databases/tables. To do this, login to the MariaDB command line.  
-	- sudo mysql -u root -p
+PHPMyAdmin does not allow for root user login by default. Instead, create a new user to access databases/tables. To do this, login to the MariaDB command line.
+
+sudo mysql -u root -p
 	
 Log in to the MariaDB “root” user with the password that was set up earlier.
 Create user and permit them to access all databases on MariaDB 
 
 Run the following
-	- GRANT ALL PRIVILEGES ON *.* TO 'patrick'@'localhost' IDENTIFIED BY 'H3LRrXhr' WITH GRANT OPTION;
+	
+GRANT ALL PRIVILEGES ON *.* TO 'patrick'@'localhost' IDENTIFIED BY 'H3LRrXhr' WITH GRANT OPTION;
 Exit MariaDB.
 
 	
