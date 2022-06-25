@@ -36,7 +36,8 @@ Account details will be stored in MariaDB
 ### Install Raspberry Pi Apache2 webserver
 
 Install Apache2:
-sudo apt install apache2 -y 
+
+	sudo apt install apache2 -y 
 
 To check if Apache2 has been installed correctly, enter the RPi’s IP address into a browser.
 
@@ -181,7 +182,6 @@ This password is what PHPMyAdmin will use to connect to the MariaDB server.
 
 Create new user
 PHPMyAdmin does not allow for root user login by default. Instead, create a new user to access databases/tables. To do this, login to the MariaDB command line.
-
 sudo mysql -u root -p
 	
 Log in to the MariaDB “root” user with the password that was set up earlier.
@@ -197,14 +197,17 @@ Exit MariaDB.
 	
 	
 ### Configuring PHPMyAdmin
-Before PHPMyAdmin can be booted, some changes need to be made to the webserver. Edit the “Apache2.conf” file.
-	- sudo nano /etc/apache2/apache2.conf
+Before PHPMyAdmin can be booted, some changes need to be made to the webserver. Edit the “Apache2.conf” file
+
+	sudo nano /etc/apache2/apache2.conf
 
 Add this line to the BOTTOM of this file. This line will include PHPMyAdmin’s configuration and allow it to be loaded in and listened to by Apache2.
-	- Include /etc/phpmyadmin/apache.conf
+
+	Include /etc/phpmyadmin/apache.conf
 
 Save, exit, and restart the Apache2 service. This will flush the current Apache2 configuration and make it load in the modified file.
-	- sudo service apache2 restart
+
+	sudo service apache2 restart
 
 	
 	
@@ -212,8 +215,10 @@ Save, exit, and restart the Apache2 service. This will flush the current Apache2
 
 ### Accessing PHPMyAdmin
 To test PHPMyAdmin, type the following address in a browser.
-	- http://192.168.0.18/phpmyadmin
-	- Replace the IP address if it differs
+	
+	http://192.168.0.18/phpmyadmin
+
+Replace the IP address if it differs
 
 Use the user created earlier to log in. 
 DO NOT use the root user as this is disabled by default. 
